@@ -51,4 +51,27 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    print(board)
+    goal = (1,2,3,4,5,6,7,8,0)
+    res = 0
+
+    for idx in range(9):
+        if board[idx] != goal[idx]:
+            #print("\ni: ", idx)
+            #print("Board i: ", board[idx])
+            
+            # Checking for missing row
+            board_row = idx // 3 
+            goal_row = goal.index(board[idx]) // 3 
+            if board_row != goal_row:
+                res +=1
+            #print("Row res :", res)
+            
+            # Checking for missing colomn
+            board_col = idx % 3
+            goal_col = goal.index(board[idx]) % 3  
+            if board_col != goal_col:
+                res +=1
+            #print("Col res :", res)
+
+    return res
