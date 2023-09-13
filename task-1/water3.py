@@ -10,21 +10,21 @@ def successors(s):
     t = 5-y
     if x > 0 and t > 0:
         if x > t:
-            yield ((x-t, 5, z), t)
+            yield ((x-t, y+t, z), t)
         else:
             yield ((0, x+y, z), x)
 
     t = 3-z
     if x > 0 and t > 0:
         if x > t:
-            yield ((x-t, y, 3), t)
+            yield ((x-t, y, z+t), t)
         else:
             yield ((0, y, x+z), x)
 
     t = 8-x
     if y > 0 and t > 0:
         if y > t:
-            yield ((8, y-t, z), t)
+            yield ((x+t, y-t, z), t)
         else:
             yield ((x+y, 0, z), y)
 
